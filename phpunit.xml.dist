@@ -6,13 +6,12 @@
          executionOrder="random"
          failOnWarning="true"
          failOnRisky="true"
-         failOnIncomplete="true"
 >
-    <coverage cacheDirectory="./build/.coverage-cache">
-        <include>
-            <directory>./src</directory>
-        </include>
-    </coverage>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
 
     <testsuites>
         <testsuite name="PHPStan strict rules">
