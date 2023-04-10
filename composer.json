@@ -25,7 +25,7 @@
         "nikic/php-parser": "^4.14"
     },
     "require-dev": {
-        "php-cs-fixer/shim": "^3.16",
+        "friendsofphp/php-cs-fixer": "^3.4",
         "phpunit/phpunit": "^8.5"
     },
     "autoload": {

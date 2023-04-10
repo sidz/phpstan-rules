@@ -29,7 +29,7 @@ return (new \PhpCsFixer\Config())
         'date_time_immutable' => true,
         'no_unused_imports' => true,
         'ordered_imports' => ['sort_algorithm' => 'alpha'],
-        'no_trailing_comma_in_singleline' => true,
+        'no_trailing_comma_in_singleline_array' => true,
         'trailing_comma_in_multiline' => true,
         'whitespace_after_comma_in_array' => true,
         'native_function_invocation' => [
