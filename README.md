@@ -12,17 +12,24 @@ Run
 composer require --dev sidz/phpstan-rules
 ```
 
-## Usage
+## Add Static Rules to `phpstan.neon`
 
-All of the [rules](https://github.com/sidz/phpstan-rules#rules) provided (and used) by this library are included in [`rules.neon`](rules.neon).
-
-When you are using [`phpstan/extension-installer`](https://github.com/phpstan/extension-installer), `rules.neon` will be automatically included.
-
-Otherwise you need to include `rules.neon` in your `phpstan.neon`:
+Currently you need to manually register all rules in your `phpstan.neon`. None of the rules has configurations yet.
 
 ```neon
-includes:
-	- vendor/sidz/phpstan-rules/rules.neon
+rules:
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAssignedToPropertyRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInArithmeticOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInBitwiseOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInComparisonOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInDefaultParameterRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInLogicalOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInMatchRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInReturnStatementRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInSwitchCaseRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInTernaryOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberVariableAssignmentRule
 ```
 
 ## Rules
