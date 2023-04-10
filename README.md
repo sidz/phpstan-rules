@@ -1,5 +1,7 @@
 # phpstan-rules
 
+[![Continuous Integration](https://github.com/sidz/phpstan-rules/workflows/Continuous%20Integration/badge.svg)](https://github.com/sidz/phpstan-rules/actions)
+
 Provides additional rules for [`phpstan/phpstan`](https://github.com/phpstan/phpstan).
 
 ## Installation
