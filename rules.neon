@@ -1,0 +1,106 @@
+parameters:
+    sidz:
+        ignoreMagicNumbers: [0, 1]
+
+parametersSchema:
+    sidz:
+        ignoreMagicNumbers: arrayOf(number())
+
+rules:
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAssignedToPropertyRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInArithmeticOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInBitwiseOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInComparisonOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInDefaultParameterRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInLogicalOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInMatchRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInReturnStatementRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInSwitchCaseRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInTernaryOperatorRule
+	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberVariableAssignmentRule
+
+services:
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAssignedToPropertyRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInArithmeticOperatorRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInBitwiseOperatorRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInComparisonOperatorRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInDefaultParameterRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInLogicalOperatorRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInMatchRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInReturnStatementRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInSwitchCaseRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInTernaryOperatorRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule
+
+    -
+        class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberVariableAssignmentRule
+        arguments:
+            ignoreMagicNumbers: %sidz.ignoreMagicNumbers%
+        tags:
+            - phpstan.rules.rule

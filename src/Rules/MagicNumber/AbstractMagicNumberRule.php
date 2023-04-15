@@ -11,10 +11,33 @@ use PHPStan\Rules\Rule;
 
 abstract class AbstractMagicNumberRule implements Rule
 {
+    /**
+     * @var list<numeric>
+     */
+    private $ignoreMagicNumbers;
+
+    /**
+     * @param list<numeric> $ignoreMagicNumbers
+     */
+    public function __construct(array $ignoreMagicNumbers = [])
+    {
+        $this->ignoreMagicNumbers = $ignoreMagicNumbers;
+    }
+
     protected function isNumber(?Expr $expr): bool
     {
-        return $expr instanceof LNumber
+        $isNumber = $expr instanceof LNumber
             || $expr instanceof DNumber
             || $expr instanceof Expr\UnaryMinus;
+
+        return $isNumber && !$this->ignoreNumber($expr);
+    }
+
+    /**
+     * @param LNumber|DNumber $scalar
+     */
+    private function ignoreNumber(Expr $scalar): bool
+    {
+        return in_array($scalar->value, $this->ignoreMagicNumbers, true);
     }
 }
