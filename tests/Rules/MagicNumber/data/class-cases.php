@@ -16,6 +16,11 @@ class Test
         return -20.5;
     }
 
+    public function returnOne(): int
+    {
+        return 1;
+    }
+
     public function returnVoid(): void
     {
     }

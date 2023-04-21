@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 
 use PHPStan\Rules\Rule;
-use PHPStan\Testing\RuleTestCase;
 use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInSwitchCaseRule;
 
-final class NoMagicNumberInSwitchCaseRuleTest extends RuleTestCase
+final class NoMagicNumberInSwitchCaseRuleTest extends AbstractMagicNumberTest
 {
     public function test_rule(): void
     {
@@ -29,6 +28,6 @@ final class NoMagicNumberInSwitchCaseRuleTest extends RuleTestCase
 
     protected function getRule(): Rule
     {
-        return new NoMagicNumberInSwitchCaseRule();
+        return self::getContainer()->getService('NoMagicNumberInSwitchCaseRule');
     }
 }

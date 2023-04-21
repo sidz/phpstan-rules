@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 
 use PHPStan\Rules\Rule;
-use PHPStan\Testing\RuleTestCase;
 use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAssignedToPropertyRule;
 
-final class NoMagicNumberAssignedToPropertyRuleTest extends RuleTestCase
+final class NoMagicNumberAssignedToPropertyRuleTest extends AbstractMagicNumberTest
 {
     public function test_rule(): void
     {
@@ -29,6 +28,6 @@ final class NoMagicNumberAssignedToPropertyRuleTest extends RuleTestCase
 
     protected function getRule(): Rule
     {
-        return new NoMagicNumberAssignedToPropertyRule();
+        return self::getContainer()->getService('NoMagicNumberAssignedToPropertyRule');
     }
 }

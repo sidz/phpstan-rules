@@ -5,20 +5,15 @@ declare(strict_types=1);
 namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 
 use PHPStan\Rules\Rule;
-use PHPStan\Testing\RuleTestCase;
 use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInLogicalOperatorRule;
 
-final class NoMagicNumberInLogicalOperatorRuleTest extends RuleTestCase
+final class NoMagicNumberInLogicalOperatorRuleTest extends AbstractMagicNumberTest
 {
     public function test_rule(): void
     {
         $this->analyse(
             [__DIR__ . '/data/bitwise-logical-cases.php'],
             [
-                [
-                    NoMagicNumberInLogicalOperatorRule::ERROR_MESSAGE,
-                    5,
-                ],
                 [
                     NoMagicNumberInLogicalOperatorRule::ERROR_MESSAGE,
                     9,
@@ -29,15 +24,19 @@ final class NoMagicNumberInLogicalOperatorRuleTest extends RuleTestCase
                 ],
                 [
                     NoMagicNumberInLogicalOperatorRule::ERROR_MESSAGE,
-                    21,
-                ],
-                [
-                    NoMagicNumberInLogicalOperatorRule::ERROR_MESSAGE,
                     25,
                 ],
                 [
                     NoMagicNumberInLogicalOperatorRule::ERROR_MESSAGE,
                     27,
+                ],
+                [
+                    NoMagicNumberInLogicalOperatorRule::ERROR_MESSAGE,
+                    49,
+                ],
+                [
+                    NoMagicNumberInLogicalOperatorRule::ERROR_MESSAGE,
+                    51,
                 ],
             ]
         );
@@ -45,6 +44,6 @@ final class NoMagicNumberInLogicalOperatorRuleTest extends RuleTestCase
 
     protected function getRule(): Rule
     {
-        return new NoMagicNumberInLogicalOperatorRule();
+        return self::getContainer()->getService('NoMagicNumberInLogicalOperatorRule');
     }
 }
