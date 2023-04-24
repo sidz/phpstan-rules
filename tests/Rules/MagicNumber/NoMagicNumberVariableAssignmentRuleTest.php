@@ -11,7 +11,7 @@ use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberVariableAssignmentRule;
 /**
  * @extends RuleTestCase<NoMagicNumberVariableAssignmentRule>
  */
-final class NoMagicNumberVariableAssignmentRuleTest extends RuleTestCase
+final class NoMagicNumberVariableAssignmentRuleTest extends AbstractMagicNumberTest
 {
     public function test_rule(): void
     {
@@ -28,11 +28,7 @@ final class NoMagicNumberVariableAssignmentRuleTest extends RuleTestCase
                 ],
                 [
                     NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
-                    9,
-                ],
-                [
-                    NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
-                    12,
+                    11,
                 ],
                 [
                     NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
@@ -44,7 +40,11 @@ final class NoMagicNumberVariableAssignmentRuleTest extends RuleTestCase
                 ],
                 [
                     NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
-                    26,
+                    18,
+                ],
+                [
+                    NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
+                    28,
                 ],
             ]
         );
@@ -52,6 +52,6 @@ final class NoMagicNumberVariableAssignmentRuleTest extends RuleTestCase
 
     protected function getRule(): Rule
     {
-        return new NoMagicNumberVariableAssignmentRule();
+        return self::getContainer()->getService('NoMagicNumberVariableAssignmentRule');
     }
 }

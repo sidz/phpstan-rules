@@ -7,6 +7,8 @@ $var2 = -2;
 function test_func($var4 = 3): void
 {
     $var5 = 0;
+    $var5_1 = 1;
+    $var5_2 = 2;
 }
 
 $var6 = .1;

@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 
 use PHPStan\Rules\Rule;
-use PHPStan\Testing\RuleTestCase;
 use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInMatchRule;
 
-final class NoMagicNumberInMatchCaseRuleTest extends RuleTestCase
+final class NoMagicNumberInMatchCaseRuleTest extends AbstractMagicNumberTest
 {
     public function test_rule(): void
     {
@@ -25,10 +24,6 @@ final class NoMagicNumberInMatchCaseRuleTest extends RuleTestCase
                 ],
                 [
                     NoMagicNumberInMatchRule::MATCH_ARM_COND_MESSAGE,
-                    6,
-                ],
-                [
-                    NoMagicNumberInMatchRule::MATCH_ARM_COND_MESSAGE,
                     7,
                 ],
                 [
@@ -41,6 +36,6 @@ final class NoMagicNumberInMatchCaseRuleTest extends RuleTestCase
 
     protected function getRule(): Rule
     {
-        return new NoMagicNumberInMatchRule();
+        return self::getContainer()->getService('NoMagicNumberInMatchRule');
     }
 }

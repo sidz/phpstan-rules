@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 
 use PHPStan\Rules\Rule;
-use PHPStan\Testing\RuleTestCase;
 use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule;
 
-final class NoMagicNumberAsFunctionArgumentRuleTest extends RuleTestCase
+final class NoMagicNumberAsFunctionArgumentRuleTest extends AbstractMagicNumberTest
 {
     public function test_rule(): void
     {
@@ -33,6 +32,6 @@ final class NoMagicNumberAsFunctionArgumentRuleTest extends RuleTestCase
 
     protected function getRule(): Rule
     {
-        return new NoMagicNumberAsFunctionArgumentRule();
+        return self::getContainer()->getService('NoMagicNumberAsFunctionArgumentRule');
     }
 }

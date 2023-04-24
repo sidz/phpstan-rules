@@ -11,17 +11,13 @@ use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInComparisonOperatorRule;
 /**
  * @extends RuleTestCase<NoMagicNumberInComparisonOperatorRule>
  */
-final class NoMagicNumberInComparisonOperatorRuleTest extends RuleTestCase
+final class NoMagicNumberInComparisonOperatorRuleTest extends AbstractMagicNumberTest
 {
     public function test_rule(): void
     {
         $this->analyse(
             [__DIR__ . '/data/comparison-cases.php'],
             [
-                [
-                    NoMagicNumberInComparisonOperatorRule::ERROR_MESSAGE,
-                    3,
-                ],
                 [
                     NoMagicNumberInComparisonOperatorRule::ERROR_MESSAGE,
                     5,
@@ -68,6 +64,6 @@ final class NoMagicNumberInComparisonOperatorRuleTest extends RuleTestCase
 
     protected function getRule(): Rule
     {
-        return new NoMagicNumberInComparisonOperatorRule();
+        return self::getContainer()->getService('NoMagicNumberInComparisonOperatorRule');
     }
 }
