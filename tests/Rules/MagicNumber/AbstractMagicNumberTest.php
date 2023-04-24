@@ -8,7 +8,7 @@ use PHPStan\Testing\RuleTestCase;
 
 abstract class AbstractMagicNumberTest extends RuleTestCase
 {
-    public static function getAdditionalConfigFiles() : array
+    public static function getAdditionalConfigFiles(): array
     {
         return array_merge(
             parent::getAdditionalConfigFiles(),
