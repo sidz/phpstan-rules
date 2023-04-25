@@ -14,22 +14,50 @@ composer require --dev sidz/phpstan-rules
 
 ## Add Static Rules to `phpstan.neon`
 
-Currently you need to manually register all rules in your `phpstan.neon`. None of the rules has configurations yet.
+Currently, you need to manually register all the rules in your `phpstan.neon`:
 
 ```neon
-rules:
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAssignedToPropertyRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInArithmeticOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInBitwiseOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInComparisonOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInDefaultParameterRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInLogicalOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInMatchRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInReturnStatementRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInSwitchCaseRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInTernaryOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberVariableAssignmentRule
+includes:
+    - vendor/sidz/phpstan-rules/rules.neon
+```
+
+Each rule by default ignores the following numbers: `0` and `1`. This can be configured by adding the following parameter to your `phpstan.neon`:
+
+```neon
+parameters:
+	sidzIgnoreMagicNumbers: [0, 1, 100]
+```
+
+## Ignoring particular rules
+
+If you need to ignore particular rule, for example `NoMagicNumberInComparisonOperatorRule`, you can do so by using built-in `ignoreErrors` parameter:
+
+```neon
+parameters:
+    ignoreErrors:
+        - '#^Do not use magic number in comparison operations\. Move to constant with a suitable name\.$#'
+```
+
+If you need to ignore this rule only for particular file or folder, this also can be done by using `ignoreErrors` parameter:
+
+```neon
+parameters:
+    ignoreErrors:
+        -
+            message: '#^Do not use magic number in comparison operations\. Move to constant with a suitable name\.$#'
+            path: src/SomeFolder/*
+```
+
+And finally, if you want to ignore all the rules from this package for particular files or folders, add this to `phpstan.neon`:
+
+```neon
+parameters:
+    ignoreErrors:
+        -
+            message: '#Do not (use|return|assign) magic number (.)#'
+            paths:
+                - src/DataFixtures/*
+                - tests/*
 ```
 
 ## Rules
