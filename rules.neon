@@ -4,20 +4,6 @@ parameters:
 parametersSchema:
 	sidzIgnoreMagicNumbers: arrayOf(number())
 
-rules:
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAssignedToPropertyRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInArithmeticOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInBitwiseOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInComparisonOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInDefaultParameterRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInLogicalOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInMatchRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInReturnStatementRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInSwitchCaseRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInTernaryOperatorRule
-	- Sid\PHPStan\Rules\MagicNumber\NoMagicNumberVariableAssignmentRule
-
 services:
     NoMagicNumberAsFunctionArgumentRule:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule
