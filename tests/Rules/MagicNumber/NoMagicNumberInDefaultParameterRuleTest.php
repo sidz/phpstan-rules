@@ -16,7 +16,7 @@ final class NoMagicNumberInDefaultParameterRuleTest extends AbstractMagicNumberT
             [
                 [
                     NoMagicNumberInDefaultParameterRule::ERROR_MESSAGE,
-                    9,
+                    11,
                 ],
             ]
         );

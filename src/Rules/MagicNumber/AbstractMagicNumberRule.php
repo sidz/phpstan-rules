@@ -29,7 +29,8 @@ abstract class AbstractMagicNumberRule implements Rule
     {
         $isNumber = $expr instanceof LNumber
             || $expr instanceof DNumber
-            || $expr instanceof Expr\UnaryMinus;
+            || ($expr instanceof Expr\UnaryMinus && $this->isNumber($expr->expr))
+            || ($expr instanceof Expr\UnaryPlus && $this->isNumber($expr->expr));
 
         return $isNumber && !$this->ignoreNumber($expr);
     }

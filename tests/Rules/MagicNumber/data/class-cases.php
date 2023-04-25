@@ -2,6 +2,8 @@
 
 class Test
 {
+    private const CONST1 = 10;
+
     private $prop1 = 10;
 
     private $prop2 = -5.5;
@@ -23,5 +25,40 @@ class Test
 
     public function returnVoid(): void
     {
+    }
+
+    public function returnValueWithNegatedUnaryMinus(): int
+    {
+        return -(-1.1);
+    }
+
+    public function returnValueWithUnaryPlus(): int
+    {
+        return +1.1;
+    }
+
+    public function returnValueWithNegatedUnaryPlus(): int
+    {
+        return -(+1.1);
+    }
+
+    public function returnValueWithDoubleUnaryPlus(): int
+    {
+        return +(+1.1);
+    }
+
+    public function returnConstWithUnaryMinus(): int
+    {
+        return -self::CONST1;
+    }
+
+    public function returnConstWithNegatedUnaryMinus(): int
+    {
+        return -(-self::CONST1);
+    }
+
+    public function returnConstWithUnaryPlus(): int
+    {
+        return +self::CONST1;
     }
 }
