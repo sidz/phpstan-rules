@@ -12,9 +12,7 @@ Run
 composer require --dev sidz/phpstan-rules
 ```
 
-## Add Static Rules to `phpstan.neon`
-
-Currently, you need to manually register all the rules in your `phpstan.neon`:
+If you use [PHPStan extension installer](https://github.com/phpstan/extension-installer), you're all set. If not, you need to manually register all the rules in your `phpstan.neon`:
 
 ```neon
 includes:
