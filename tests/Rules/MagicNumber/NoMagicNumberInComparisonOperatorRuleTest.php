@@ -11,7 +11,7 @@ use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInComparisonOperatorRule;
 /**
  * @extends RuleTestCase<NoMagicNumberInComparisonOperatorRule>
  */
-final class NoMagicNumberInComparisonOperatorRuleTest extends AbstractMagicNumberTest
+final class NoMagicNumberInComparisonOperatorRuleTest extends AbstractMagicNumberTestCase
 {
     public function test_rule(): void
     {

@@ -7,7 +7,7 @@ namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 use PHPStan\Rules\Rule;
 use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInSwitchCaseRule;
 
-final class NoMagicNumberInSwitchCaseRuleTest extends AbstractMagicNumberTest
+final class NoMagicNumberInSwitchCaseRuleTest extends AbstractMagicNumberTestCase
 {
     public function test_rule(): void
     {
