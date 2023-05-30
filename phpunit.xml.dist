@@ -6,16 +6,18 @@
          executionOrder="random"
          failOnWarning="true"
          failOnRisky="true"
->
-    <filter>
-        <whitelist addUncoveredFilesFromWhitelist="true" processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">./src/</directory>
-        </whitelist>
-    </filter>
+         cacheDirectory=".phpunit.cache">
+  <coverage includeUncoveredFiles="true"/>
 
-    <testsuites>
-        <testsuite name="PHPStan strict rules">
-            <directory>tests/</directory>
-        </testsuite>
-    </testsuites>
+  <testsuites>
+    <testsuite name="PHPStan strict rules">
+      <directory>tests/</directory>
+    </testsuite>
+  </testsuites>
+
+  <source>
+    <include>
+      <directory suffix=".php">./src/</directory>
+    </include>
+  </source>
 </phpunit>

@@ -7,7 +7,7 @@ namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 use PHPStan\Rules\Rule;
 use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule;
 
-final class NoMagicNumberAsFunctionArgumentRuleTest extends AbstractMagicNumberTest
+final class NoMagicNumberAsFunctionArgumentRuleTest extends AbstractMagicNumberTestCase
 {
     public function test_rule(): void
     {

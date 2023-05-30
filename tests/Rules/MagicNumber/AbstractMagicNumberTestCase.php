@@ -6,7 +6,7 @@ namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 
 use PHPStan\Testing\RuleTestCase;
 
-abstract class AbstractMagicNumberTest extends RuleTestCase
+abstract class AbstractMagicNumberTestCase extends RuleTestCase
 {
     public static function getAdditionalConfigFiles(): array
     {

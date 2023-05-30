@@ -11,7 +11,7 @@ use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberVariableAssignmentRule;
 /**
  * @extends RuleTestCase<NoMagicNumberVariableAssignmentRule>
  */
-final class NoMagicNumberVariableAssignmentRuleTest extends AbstractMagicNumberTest
+final class NoMagicNumberVariableAssignmentRuleTest extends AbstractMagicNumberTestCase
 {
     public function test_rule(): void
     {
