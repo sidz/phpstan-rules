@@ -26,7 +26,7 @@ final class NoMagicNumberAssignedToPropertyRule extends AbstractMagicNumberRule
      */
     public function processNode(Node $node, Scope $scope): array
     {
-        if ($node->default === null || !$this->isNumber($node->default)) {
+        if ($node->default === null || !$this->isNumber($node->default)) { // this is to trigger infection
             return [];
         }
 
