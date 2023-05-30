@@ -26,3 +26,12 @@ function test(): void
 {
     2 ** $var6;
 }
+
+const TWO = 2;
+
+function test(): void
+{
+    TWO ** $var6;
+}
+
+$var1 . 2;

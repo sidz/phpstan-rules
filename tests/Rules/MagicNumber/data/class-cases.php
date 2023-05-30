@@ -61,4 +61,9 @@ class Test
     {
         return +self::CONST1;
     }
+
+    public function testMethodWithDefaultNull($param = null): ?int
+    {
+        return $param;
+    }
 }

@@ -12,7 +12,7 @@ final class NoMagicNumberAssignedToPropertyRuleTest extends AbstractMagicNumberT
     public function test_rule(): void
     {
         $this->analyse(
-            [__DIR__ . '/data/class-cases.php'],
+            [__DIR__ . '/data/class-property-cases.php'],
             [
                 [
                     NoMagicNumberAssignedToPropertyRule::ERROR_MESSAGE,

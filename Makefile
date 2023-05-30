@@ -29,7 +29,7 @@ DISABLE_XDEBUG=XDEBUG_MODE=off
 #---------------------------------------------------------------------------
 
 analyze: ## Runs analyze tools (Static Analysis tools, Unit and Functional tests and etc)
-analyze: cs-check validate-composer tests
+analyze: cs-check validate-composer tests infection
 
 cs-check: prerequisites ## Runs code style checks in dry-run mode
 	$(DISABLE_XDEBUG) $(PHP_CS_FIXER) $(PHP_CS_FIXER_ARGS) --dry-run
@@ -42,6 +42,9 @@ validate-composer: prerequisites ## Runs Composer Validate
 
 tests: prerequisites ## Runs tests
 	$(DISABLE_XDEBUG) vendor/bin/phpunit
+
+infection: prerequisites ## Runs Infection (Mutation Testing tool)
+	$(DISABLE_XDEBUG) vendor/bin/infection --threads=max --only-covered --show-mutations --min-covered-msi=100
 
 # We need both vendor/autoload.php and composer.lock being up to date
 .PHONY: prerequisites
