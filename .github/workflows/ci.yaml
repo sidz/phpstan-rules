@@ -59,6 +59,7 @@ jobs:
 
       - name: Run Infection for touched lines
         shell: bash
+        if: github.event_name == 'pull_request'
         run: |
           git fetch origin $GITHUB_BASE_REF
           vendor/bin/infection --threads=max --only-covered --show-mutations --min-covered-msi=100 --git-diff-lines --git-diff-base=origin/$GITHUB_BASE_REF --ignore-msi-with-no-mutations
