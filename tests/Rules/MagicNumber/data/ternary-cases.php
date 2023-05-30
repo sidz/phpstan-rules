@@ -9,4 +9,6 @@ $c = $b ?: -3.5;
 
 $d = $b ? 'string' : 6;
 
+$d = $b ? 'string' : $string;
+
 $d = $b ?: $string;

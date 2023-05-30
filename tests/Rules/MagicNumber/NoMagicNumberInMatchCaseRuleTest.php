@@ -30,6 +30,10 @@ final class NoMagicNumberInMatchCaseRuleTest extends AbstractMagicNumberTestCase
                     NoMagicNumberInMatchRule::MATCH_ARM_COND_MESSAGE,
                     7,
                 ],
+                [
+                    NoMagicNumberInMatchRule::MATCH_ARM_COND_MESSAGE,
+                    8,
+                ],
             ]
         );
     }
