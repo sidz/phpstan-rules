@@ -45,5 +45,12 @@
         "sort-packages": true,
         "preferred-install": "dist"
     },
+    "extra": {
+        "phpstan": {
+            "includes": [
+                "rules.neon"
+            ]
+        }
+    },
     "prefer-stable": true
 }
