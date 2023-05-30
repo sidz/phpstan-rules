@@ -57,6 +57,9 @@ jobs:
         shell: bash
         run: make tests
 
-      - name: Run Infection
+      - name: Run Infection for touched lines
         shell: bash
-        run: make infection
+        run: |
+          git fetch origin $GITHUB_BASE_REF
+          vendor/bin/infection --threads=max --only-covered --show-mutations --min-covered-msi=100 --git-diff-lines --git-diff-base=origin/$GITHUB_BASE_REF --ignore-msi-with-no-mutations
+

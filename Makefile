@@ -46,7 +46,6 @@ tests: prerequisites ## Runs tests
 infection: prerequisites ## Runs Infection (Mutation Testing tool)
 	$(DISABLE_XDEBUG) vendor/bin/infection --threads=max --only-covered --show-mutations --min-covered-msi=100
 
-
 # We need both vendor/autoload.php and composer.lock being up to date
 .PHONY: prerequisites
 prerequisites: vendor/autoload.php composer.lock
