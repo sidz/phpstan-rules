@@ -51,3 +51,7 @@ $var1 === 'string';
 $var1 . 'string';
 
 $var1 . 3;
+
+$var1 == 2;
+
+$var2 != 2;
