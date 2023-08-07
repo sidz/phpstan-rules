@@ -62,6 +62,18 @@ final class NoMagicNumberInArithmeticOperatorRuleTest extends AbstractMagicNumbe
                     NoMagicNumberInArithmeticOperatorRule::ERROR_MESSAGE,
                     27,
                 ],
+                [
+                    NoMagicNumberInArithmeticOperatorRule::ERROR_MESSAGE,
+                    40,
+                ],
+                [
+                    NoMagicNumberInArithmeticOperatorRule::ERROR_MESSAGE,
+                    42,
+                ],
+                [
+                    NoMagicNumberInArithmeticOperatorRule::ERROR_MESSAGE,
+                    44,
+                ],
             ]
         );
     }

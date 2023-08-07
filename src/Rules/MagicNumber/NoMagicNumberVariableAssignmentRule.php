@@ -26,7 +26,7 @@ final class NoMagicNumberVariableAssignmentRule extends AbstractMagicNumberRule
      */
     public function processNode(Node $node, Scope $scope): array
     {
-        if (!$this->isNumber($node->expr)) {
+        if (!$this->isNumeric($node->expr)) {
             return [];
         }
 

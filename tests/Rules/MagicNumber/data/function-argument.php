@@ -9,6 +9,10 @@ test(10);
 
 class Test
 {
+    public function __construct($value = '123')
+    {
+    }
+
     public function first(int $i)
     {
         $this->second(10.34);
@@ -23,3 +27,13 @@ class Test
 }
 
 (new Test())->first(15);
+
+(new Test((string) 123));
+
+(new Test('123'));
+
+(new Test('string'));
+
+(new Test(null));
+
+(new Test(new stdClass()));

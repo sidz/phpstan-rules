@@ -20,11 +20,19 @@ final class NoMagicNumberAsFunctionArgumentRuleTest extends AbstractMagicNumberT
                 ],
                 [
                     NoMagicNumberAsFunctionArgumentRule::ERROR_MESSAGE,
-                    14,
+                    18,
                 ],
                 [
                     NoMagicNumberAsFunctionArgumentRule::ERROR_MESSAGE,
-                    25,
+                    29,
+                ],
+                [
+                    NoMagicNumberAsFunctionArgumentRule::ERROR_MESSAGE,
+                    31,
+                ],
+                [
+                    NoMagicNumberAsFunctionArgumentRule::ERROR_MESSAGE,
+                    33,
                 ],
             ]
         );

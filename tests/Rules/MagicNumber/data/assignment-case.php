@@ -9,6 +9,7 @@ function test_func($var4 = 3): void
     $var5 = 0;
     $var5_1 = 1;
     $var5_2 = 2;
+    $var = '0';
 }
 
 $var6 = .1;
@@ -30,3 +31,9 @@ class Test
         return $var9;
     }
 }
+
+$var = '10';
+
+$var = '-5';
+
+$var = new stdClass();

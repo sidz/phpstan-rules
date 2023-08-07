@@ -22,6 +22,10 @@ final class NoMagicNumberAssignedToPropertyRuleTest extends AbstractMagicNumberT
                     NoMagicNumberAssignedToPropertyRule::ERROR_MESSAGE,
                     9,
                 ],
+                [
+                    NoMagicNumberAssignedToPropertyRule::ERROR_MESSAGE,
+                    13,
+                ],
             ]
         );
     }

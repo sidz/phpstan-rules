@@ -7,7 +7,7 @@ namespace Sid\PHPStan\Tests\Rules\MagicNumber;
 use PHPStan\Rules\Rule;
 use Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInDefaultParameterRule;
 
-final class NoMagicNumberInDefaultParameterRuleTest extends AbstractMagicNumberTestCase
+final class NoMagicNumberInDefaultParameterRuleWithEnabledIgnoreNumericStringParameterTest extends AbstractMagicNumberTestCase
 {
     public function test_rule(): void
     {
@@ -18,16 +18,12 @@ final class NoMagicNumberInDefaultParameterRuleTest extends AbstractMagicNumberT
                     NoMagicNumberInDefaultParameterRule::ERROR_MESSAGE,
                     11,
                 ],
-                [
-                    NoMagicNumberInDefaultParameterRule::ERROR_MESSAGE,
-                    77,
-                ],
             ]
         );
     }
 
     protected function getRule(): Rule
     {
-        return self::getContainer()->getService('NoMagicNumberInDefaultParameterRule');
+        return new NoMagicNumberInDefaultParameterRule([], true);
     }
 }

@@ -26,11 +26,11 @@ final class NoMagicNumberInTernaryOperatorRule extends AbstractMagicNumberRule
      */
     public function processNode(Node $node, Scope $scope): array
     {
-        if ($node->if !== null && !$this->isNumber($node->else) && !$this->isNumber($node->if)) {
+        if ($node->if !== null && !$this->isNumeric($node->else) && !$this->isNumeric($node->if)) {
             return [];
         }
 
-        if ($node->if === null && !$this->isNumber($node->else) && !$this->isNumber($node->if)) {
+        if ($node->if === null && !$this->isNumeric($node->else) && !$this->isNumeric($node->if)) {
             return [];
         }
 

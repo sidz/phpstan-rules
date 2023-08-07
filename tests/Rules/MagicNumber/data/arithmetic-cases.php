@@ -35,3 +35,10 @@ function test(): void
 }
 
 $var1 . 2;
+
+
+$var + '2';
+
+'2' + $var;
+
+$var + (string) 123;

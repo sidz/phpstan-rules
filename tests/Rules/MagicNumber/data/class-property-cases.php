@@ -9,4 +9,8 @@ class Test
     private $prop2 = -5.5;
 
     private $prop3 = null;
+
+    private $prop4 = '123';
+
+    private $prop5 = 'string';
 }
