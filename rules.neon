@@ -1,14 +1,17 @@
 parameters:
 	sidzIgnoreMagicNumbers: [0, 1]
+	sidzIgnoreNumericStrings: false
 
 parametersSchema:
 	sidzIgnoreMagicNumbers: arrayOf(number())
+	sidzIgnoreNumericStrings: boolean()
 
 services:
     NoMagicNumberAsFunctionArgumentRule:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAsFunctionArgumentRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -16,6 +19,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberAssignedToPropertyRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -23,6 +27,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInArithmeticOperatorRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -30,6 +35,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInBitwiseOperatorRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -37,6 +43,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInComparisonOperatorRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -44,6 +51,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInDefaultParameterRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -51,6 +59,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInLogicalOperatorRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -58,6 +67,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInMatchRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -65,6 +75,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInReturnStatementRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -72,6 +83,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInSwitchCaseRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -79,6 +91,7 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberInTernaryOperatorRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule
 
@@ -86,5 +99,6 @@ services:
         class: Sid\PHPStan\Rules\MagicNumber\NoMagicNumberVariableAssignmentRule
         arguments:
             ignoreMagicNumbers: %sidzIgnoreMagicNumbers%
+            ignoreNumericStrings: %sidzIgnoreNumericStrings%
         tags:
             - phpstan.rules.rule

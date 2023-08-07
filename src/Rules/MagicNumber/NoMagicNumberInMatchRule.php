@@ -29,13 +29,13 @@ final class NoMagicNumberInMatchRule extends AbstractMagicNumberRule
     {
         $messages = [];
 
-        if ($this->isNumber($node->cond)) {
+        if ($this->isNumeric($node->cond)) {
             $messages[] = RuleErrorBuilder::message(self::MATCH_MESSAGE)->line($node->cond->getLine())->build();
         }
 
         foreach ($node->arms as $arm) {
             foreach ($arm->conds as $case) {
-                if (!$this->isNumber($case)) {
+                if (!$this->isNumeric($case)) {
                     continue;
                 }
 

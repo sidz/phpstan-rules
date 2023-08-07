@@ -66,6 +66,10 @@ final class NoMagicNumberInComparisonOperatorRuleTest extends AbstractMagicNumbe
                     NoMagicNumberInComparisonOperatorRule::ERROR_MESSAGE,
                     57,
                 ],
+                [
+                    NoMagicNumberInComparisonOperatorRule::ERROR_MESSAGE,
+                    59,
+                ],
             ]
         );
     }

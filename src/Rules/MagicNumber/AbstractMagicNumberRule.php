@@ -8,29 +8,28 @@ use function in_array;
 use PhpParser\Node\Expr;
 use PhpParser\Node\Scalar\DNumber;
 use PhpParser\Node\Scalar\LNumber;
+use PhpParser\Node\Scalar\String_;
 use PHPStan\Rules\Rule;
 
 abstract class AbstractMagicNumberRule implements Rule
 {
     /**
-     * @var list<numeric>
-     */
-    private $ignoreMagicNumbers;
-
-    /**
      * @param list<numeric> $ignoreMagicNumbers
      */
-    public function __construct(array $ignoreMagicNumbers = [])
-    {
-        $this->ignoreMagicNumbers = $ignoreMagicNumbers;
+    public function __construct(
+        private readonly array $ignoreMagicNumbers = [],
+        private readonly bool $ignoreNumericStrings = false,
+    ) {
     }
 
-    protected function isNumber(?Expr $expr): bool
+    protected function isNumeric(?Expr $expr): bool
     {
         $isNumber = $expr instanceof LNumber
             || $expr instanceof DNumber
-            || ($expr instanceof Expr\UnaryMinus && $this->isNumber($expr->expr))
-            || ($expr instanceof Expr\UnaryPlus && $this->isNumber($expr->expr));
+            || ($expr instanceof Expr\UnaryMinus && $this->isNumeric($expr->expr))
+            || ($expr instanceof Expr\UnaryPlus && $this->isNumeric($expr->expr))
+            || ($expr instanceof Expr\Cast\String_ && $this->isNumeric($expr->expr))
+            || $this->isNumericString($expr);
 
         return $isNumber && !$this->ignoreNumber($expr);
     }
@@ -41,5 +40,12 @@ abstract class AbstractMagicNumberRule implements Rule
     private function ignoreNumber(Expr $scalar): bool
     {
         return in_array($scalar->value, $this->ignoreMagicNumbers, true);
+    }
+
+    private function isNumericString(?Expr $expr): bool
+    {
+        return !$this->ignoreNumericStrings
+            && $expr instanceof String_
+            && is_numeric($expr->value);
     }
 }

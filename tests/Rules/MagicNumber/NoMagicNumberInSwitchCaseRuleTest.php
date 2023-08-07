@@ -22,6 +22,14 @@ final class NoMagicNumberInSwitchCaseRuleTest extends AbstractMagicNumberTestCas
                     NoMagicNumberInSwitchCaseRule::ERROR_MESSAGE,
                     4,
                 ],
+                [
+                    NoMagicNumberInSwitchCaseRule::ERROR_MESSAGE,
+                    6,
+                ],
+                [
+                    NoMagicNumberInSwitchCaseRule::ERROR_CONDITION_MESSAGE,
+                    11,
+                ],
             ]
         );
     }

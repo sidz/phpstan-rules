@@ -12,3 +12,7 @@ $d = $b ? 'string' : 6;
 $d = $b ? 'string' : $string;
 
 $d = $b ?: $string;
+
+$a = $b ? 2 : '321';
+
+$d = $b ?: '123';

@@ -66,4 +66,16 @@ class Test
     {
         return $param;
     }
+
+    public function returnNumericString(): string
+    {
+        return '123';
+    }
+
+    private $prop3 = '12';
+
+    public function numericStringAsDefaultArgument($param = '-3'): int
+    {
+        return 'string';
+    }
 }

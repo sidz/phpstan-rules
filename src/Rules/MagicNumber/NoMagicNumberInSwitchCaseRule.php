@@ -29,12 +29,12 @@ final class NoMagicNumberInSwitchCaseRule extends AbstractMagicNumberRule
     {
         $messages = [];
 
-        if ($this->isNumber($node->cond)) {
+        if ($this->isNumeric($node->cond)) {
             $messages[] = RuleErrorBuilder::message(self::ERROR_CONDITION_MESSAGE)->line($node->cond->getLine())->build();
         }
 
         foreach ($node->cases as $case) {
-            if (!$this->isNumber($case->cond)) {
+            if (!$this->isNumeric($case->cond)) {
                 continue;
             }
 

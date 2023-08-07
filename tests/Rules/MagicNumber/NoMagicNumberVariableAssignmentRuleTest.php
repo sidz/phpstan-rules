@@ -32,19 +32,31 @@ final class NoMagicNumberVariableAssignmentRuleTest extends AbstractMagicNumberT
                 ],
                 [
                     NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
-                    14,
+                    12,
                 ],
                 [
                     NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
-                    16,
+                    15,
                 ],
                 [
                     NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
-                    18,
+                    17,
                 ],
                 [
                     NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
-                    28,
+                    19,
+                ],
+                [
+                    NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
+                    29,
+                ],
+                [
+                    NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
+                    35,
+                ],
+                [
+                    NoMagicNumberVariableAssignmentRule::ERROR_MESSAGE,
+                    37,
                 ],
             ]
         );

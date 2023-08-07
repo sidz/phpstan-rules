@@ -38,6 +38,10 @@ final class NoMagicNumberInReturnStatementRuleTest extends AbstractMagicNumberTe
                     NoMagicNumberInReturnStatementRule::ERROR_MESSAGE,
                     47,
                 ],
+                [
+                    NoMagicNumberInReturnStatementRule::ERROR_MESSAGE,
+                    72,
+                ],
             ]
         );
     }

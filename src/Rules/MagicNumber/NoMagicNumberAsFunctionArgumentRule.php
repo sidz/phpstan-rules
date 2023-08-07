@@ -26,7 +26,7 @@ final class NoMagicNumberAsFunctionArgumentRule extends AbstractMagicNumberRule
      */
     public function processNode(Node $node, Scope $scope): array
     {
-        if ($this->isNumber($node->value)) {
+        if ($this->isNumeric($node->value)) {
             return [
                 RuleErrorBuilder::message(self::ERROR_MESSAGE)->line($node->getLine())->build(),
             ];

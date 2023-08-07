@@ -26,6 +26,14 @@ final class NoMagicNumberInTernaryOperatorRuleTest extends AbstractMagicNumberTe
                     NoMagicNumberInTernaryOperatorRule::ERROR_MESSAGE,
                     10,
                 ],
+                [
+                    NoMagicNumberInTernaryOperatorRule::ERROR_MESSAGE,
+                    16,
+                ],
+                [
+                    NoMagicNumberInTernaryOperatorRule::ERROR_MESSAGE,
+                    18,
+                ],
             ]
         );
     }

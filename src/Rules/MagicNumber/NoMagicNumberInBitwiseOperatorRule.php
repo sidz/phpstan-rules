@@ -28,7 +28,7 @@ final class NoMagicNumberInBitwiseOperatorRule extends AbstractMagicNumberRule
             return [];
         }
 
-        if (!$this->isNumber($node->left) && !$this->isNumber($node->right)) {
+        if (!$this->isNumeric($node->left) && !$this->isNumeric($node->right)) {
             return [];
         }
 
