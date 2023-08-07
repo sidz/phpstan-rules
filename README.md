@@ -26,6 +26,13 @@ parameters:
 	sidzIgnoreMagicNumbers: [0, 1, 100]
 ```
 
+Each rule by default detects numeric strings like `'12'` in source code. This behavior could be disabled via parameter:
+
+```neon
+parameters:
+	sidzIgnoreNumericStrings: true
+```
+
 ## Ignoring particular rules
 
 If you need to ignore particular rule, for example `NoMagicNumberInComparisonOperatorRule`, you can do so by using built-in `ignoreErrors` parameter:
@@ -57,6 +64,8 @@ parameters:
                 - src/DataFixtures/*
                 - tests/*
 ```
+
+##
 
 ## Rules
 
