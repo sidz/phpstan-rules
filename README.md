@@ -65,8 +65,6 @@ parameters:
                 - tests/*
 ```
 
-##
-
 ## Rules
 
 This package provides the following rules for use with [`phpstan/phpstan`](https://github.com/phpstan/phpstan):
