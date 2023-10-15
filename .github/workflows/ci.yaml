@@ -17,13 +17,13 @@ jobs:
       fail-fast: false
       matrix:
         operating-system: [ ubuntu-latest ]
-        php-version: [ '8.1', '8.2' ]
+        php-version: [ '8.1', '8.2', '8.3' ]
 
     name: Tests on ${{ matrix.operating-system }} with PHP ${{ matrix.php-version }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
