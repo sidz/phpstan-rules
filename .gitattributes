@@ -1,1 +1,8 @@
 *.php text eol=lf
+
+# Directories and files we do not want to distribute
+/.*                     export-ignore
+/tests/                 export-ignore
+/infection.json5        export-ignore
+/Makefile               export-ignore
+/phpunit.xml.dist       export-ignore
