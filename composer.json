@@ -6,7 +6,8 @@
     "keywords": [
         "phpstan",
         "phpstan-rules",
-        "phpstan-extreme-rules"
+        "phpstan-extreme-rules",
+        "phpstan-magic-numbers"
     ],
     "authors": [
         {
@@ -21,12 +22,11 @@
     },
     "require": {
         "php": "^8.1, <8.4",
-        "nikic/php-parser": "^4.14",
+        "nikic/php-parser": "^4.14 || ^5.0",
         "phpstan/phpstan": "^1.8"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.4",
-        "infection/infection": "^0.27.0",
         "phpunit/phpunit": "^10.1"
     },
     "autoload": {
