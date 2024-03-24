@@ -19,11 +19,11 @@ final class NoMagicNumberInArithmeticOperatorRule extends AbstractMagicNumberRul
 
     public function getNodeType(): string
     {
-        return Node\Expr\BinaryOp::class;
+        return BinaryOp::class;
     }
 
     /**
-     * @param Node\Expr\BinaryOp $node
+     * @param BinaryOp $node
      */
     public function processNode(Node $node, Scope $scope): array
     {
