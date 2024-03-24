@@ -11,6 +11,12 @@
             "ignore": [
                 "Sid\\PHPStan\\Rules\\MagicNumber\\AbstractMagicNumberRule::isNumericString"
             ]
+        },
+        "FalseValue": {
+            "ignore": [
+                // because in current tests Rule is always created with $ignoreNumericStrings=false
+                "Sid\\PHPStan\\Rules\\MagicNumber\\AbstractMagicNumberRule::__construct"
+            ]
         }
     }
 }
