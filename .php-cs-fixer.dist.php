@@ -1,6 +1,12 @@
 <?php
 
-$finder = \PhpCsFixer\Finder::create()
+declare(strict_types=1);
+
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
+
+$finder = Finder::create()
     ->in(['src', 'tests'])
     ->exclude([
         'Rules/MagicNumber/data'
@@ -9,7 +15,8 @@ $finder = \PhpCsFixer\Finder::create()
         'bootstrap.php',
     ])
 ;
-return (new \PhpCsFixer\Config())
+return (new Config())
+    ->setParallelConfig(ParallelConfigFactory::detect())
     ->setRules([
         '@Symfony' => true,
         '@PHP71Migration' => true,
@@ -29,7 +36,7 @@ return (new \PhpCsFixer\Config())
         'date_time_immutable' => true,
         'no_unused_imports' => true,
         'ordered_imports' => ['sort_algorithm' => 'alpha'],
-        'no_trailing_comma_in_singleline_array' => true,
+        'no_trailing_comma_in_singleline' => true,
         'trailing_comma_in_multiline' => true,
         'whitespace_after_comma_in_array' => true,
         'native_function_invocation' => [
@@ -68,7 +75,7 @@ return (new \PhpCsFixer\Config())
             ],
         ],
         'blank_line_between_import_groups' => false,
-        'compact_nullable_typehint' => true,
+        'compact_nullable_type_declaration' => true,
         'global_namespace_import' => [
             'import_classes' => true,
             'import_constants' => true,

@@ -17,7 +17,7 @@ ARGS := $(filter-out $(KNOWN_TARGETS),$(MAKECMDGOALS))
 #---------------------------------------------------------------------------
 
 PHP_CS_FIXER=vendor/bin/php-cs-fixer fix
-PHP_CS_FIXER_ARGS=--verbose --config=.php-cs-fixer.dist.php --allow-risky=yes --diff
+PHP_CS_FIXER_ARGS=--verbose --config=.php-cs-fixer.dist.php --allow-risky=yes --diff --show-progress=dots
 
 # Psalm
 PSALM=vendor/bin/psalm
