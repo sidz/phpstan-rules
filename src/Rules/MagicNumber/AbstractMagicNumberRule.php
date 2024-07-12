@@ -39,7 +39,7 @@ abstract class AbstractMagicNumberRule implements Rule
      */
     private function ignoreNumber(Expr $scalar): bool
     {
-        return in_array($scalar->value, $this->ignoreMagicNumbers, true);
+        return in_array((string) $scalar->value, array_map('strval', $this->ignoreMagicNumbers), true);
     }
 
     private function isNumericString(?Expr $expr): bool
