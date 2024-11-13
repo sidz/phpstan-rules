@@ -18,7 +18,7 @@ final class NoMagicNumberAssignedToPropertyRule extends AbstractMagicNumberRule
 
     public function getNodeType(): string
     {
-        return Node\Stmt\PropertyProperty::class;
+        return Node\PropertyItem::class;
     }
 
     /**
