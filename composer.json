@@ -25,10 +25,10 @@
         "phpstan/phpstan": "^2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.59",
-        "infection/infection": "^0.28.0",
-        "nikic/php-parser": "^5.3",
-        "phpunit/phpunit": "^10.1"
+        "friendsofphp/php-cs-fixer": "^3.84",
+        "infection/infection": "^0.29.8",
+        "nikic/php-parser": "^5.5",
+        "phpunit/phpunit": "^10.5"
     },
     "autoload": {
         "psr-4": {
