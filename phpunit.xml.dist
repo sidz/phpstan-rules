@@ -6,6 +6,9 @@
          executionOrder="random"
          failOnWarning="true"
          failOnRisky="true"
+         failOnPhpunitDeprecation="true"
+         displayDetailsOnPhpunitDeprecations="true"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
          cacheDirectory=".phpunit.cache">
   <coverage includeUncoveredFiles="true"/>
 
@@ -17,7 +20,7 @@
 
   <source>
     <include>
-      <directory suffix=".php">./src/</directory>
+      <directory>./src/</directory>
     </include>
   </source>
 </phpunit>
